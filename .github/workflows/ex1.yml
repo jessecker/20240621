@@ -14,4 +14,6 @@ jobs:
           node-version: 14
       - name: Install bats
         run: npm install -g bats
+      - name: run bats
+        run: bats -v
       
