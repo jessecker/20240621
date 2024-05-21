@@ -16,4 +16,15 @@ jobs:
         run: npm install -g bats
       - name: run bats
         run: bats -v
-      
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+      - name: Istall Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - name: Run npm test
+        run: npm test
