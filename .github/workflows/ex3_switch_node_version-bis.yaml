@@ -4,10 +4,13 @@ on:
 
 jobs:
   create-issue:
+    permissions: 
+      issues: write
     runs-on: ubuntu-latest
     env:
         NODE_VERSION: 14
     steps:
+
       - name: Create issue using REST API
         run: |
           curl --request POST \
