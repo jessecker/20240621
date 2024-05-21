@@ -1,6 +1,6 @@
 name: npm test v2
 on:
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   job1:
