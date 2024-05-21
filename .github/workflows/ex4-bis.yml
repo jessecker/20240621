@@ -1,0 +1,7 @@
+name: re-use workflow
+on:
+  workflow_dispatch:
+
+jobs:
+    call-workflow-ex4-in-local-repo:
+        uses: ./.github/workflows/ex4.yml
