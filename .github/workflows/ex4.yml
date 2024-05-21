@@ -5,7 +5,7 @@ on:
         nodeversion:
             required: true
             type: string
-            default: lts
+            default: '14'
 
 jobs:
   run-npm-test:
