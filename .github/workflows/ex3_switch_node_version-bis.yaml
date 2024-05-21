@@ -25,4 +25,5 @@ jobs:
             "title": "Automated issue for commit: ${{ github.sha }}",
             "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _ ${{steps.step1.outputs.SHORT_SHA}}_.\n\n ${{env.SUPER_SECRET}}"
             }' \
+            --fail
           
