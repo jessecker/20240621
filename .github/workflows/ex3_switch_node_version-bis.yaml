@@ -4,10 +4,14 @@ on:
 
 jobs:
   create-issue:
+    permissions: 
+      issues: write
     runs-on: ubuntu-latest
     env:
         NODE_VERSION: 14
     steps:
+      - name: Add SHORT_SHA env property with commit short sha
+        run: echo "SHORT_SHA=echo ${GITHUB_SHA::7}" >> $GITHUB_ENV
       - name: Create issue using REST API
         run: |
           curl --request POST \
@@ -16,6 +20,6 @@ jobs:
           --header 'content-type: application/json' \
           --data '{
             "title": "Automated issue for commit: ${{ github.sha }}",
-            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
+            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${SHORT_SHA}_."
             }' \
           
