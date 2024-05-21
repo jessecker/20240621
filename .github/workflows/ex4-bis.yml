@@ -5,3 +5,5 @@ on:
 jobs:
     call-workflow-ex4-in-local-repo:
         uses: ./.github/workflows/ex4.yml
+        with: 
+            nodeversion: lts
