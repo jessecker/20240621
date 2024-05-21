@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Add SHORT_SHA env property with commit short sha
         id: step1
-        run: echo 'SHORT_SHA=${GITHUB_SHA::7}' >> $GITHUB_OUTPUT
+        run: echo 'SHORT_SHA='${GITHUB_SHA::10} >> $GITHUB_OUTPUT
       - name: Create issue using REST API
         run: |
           curl --request POST \
