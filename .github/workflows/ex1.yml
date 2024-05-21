@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Check out repository # as they are running in different vms, checkout and install is needed
         uses: actions/checkout@v3
-      - name: Istall Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
           node-version: lts/*
